@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <record id="view_approval_line_list" model="ir.ui.view">
+        <field name="name">approval.line.list</field>
+        <field name="model">approval.line</field>
+        <field name="arch" type="xml">
+            <list string="Approval Lines" 
+                  create="false"
+                  edit="false"
+                  decoration-success="state=='approved'" 
+                  decoration-danger="state=='rejected'"
+                  decoration-muted="state=='pending'">
+                <field name="sequence"/>
+                <field name="res_name"/>
+                <field name="approver_name"/>
+                <field name="state" widget="badge" 
+                       decoration-success="state=='approved'"
+                       decoration-danger="state=='rejected'"
+                       decoration-warning="state=='pending'"/>
+                <field name="approval_date"/>
+                <field name="notes"/>
+            </list>
+        </field>
+    </record>
+
+</odoo>

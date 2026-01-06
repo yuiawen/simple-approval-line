@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Approval Line Action -->
+    <record id="action_approval_line" model="ir.actions.act_window">
+        <field name="name">Approval Lines</field>
+        <field name="res_model">approval.line</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No approval lines yet
+            </p>
+            <p>
+                Approval lines are created automatically when documents require approval.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem id="menu_approval_root"
+              name="Approvals"
+              sequence="100"/>
+    
+    <menuitem id="menu_approval_lines"
+              name="Approval Lines"
+              parent="menu_approval_root"
+              action="action_approval_line"
+              sequence="10"/>
+
+</odoo>
